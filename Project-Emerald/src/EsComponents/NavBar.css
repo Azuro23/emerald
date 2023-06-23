@@ -14,11 +14,10 @@ margin:auto !important;
   align-items: center;
   justify-content: space-around;
   padding: 0 20px;
-  background-image: url(../assets/blackbg2.png);
+  background-image: url(../assets/glossbg3.png);
  
   background-size: cover;
-  background-position-x: 110em !important;
-  background-position-y: -32em;
+
   opacity: 0;
 }
 .fade-in{
