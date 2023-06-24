@@ -24,25 +24,25 @@ import image8 from "./assets/8.png";
 const data = [
   {
     title: "Card 1",
-    description: "Description for Card 1",
+    description: "HI Im card 1",
     imageUrl: image1,
     secondaryImageUrl: image2,
   },
   {
     title: "Card 2",
-    description: "Description for Card 2",
+    description: "HI Im card 2",
     imageUrl: image3,
     secondaryImageUrl: image4,
   },
   {
     title: "Card 3",
-    description: "Description for Card 1",
+    description: "HI Im card 3",
     imageUrl: image5,
     secondaryImageUrl: image6,
   },
   {
     title: "Card 4",
-    description: "Description for Card 2",
+    description: "HI Im card 4",
     imageUrl: image7,
     secondaryImageUrl: image8,
   },
