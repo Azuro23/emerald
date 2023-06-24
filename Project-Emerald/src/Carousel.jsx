@@ -1,102 +1,96 @@
-import { Box, Button, Flex, HStack, Image, Text, Textarea } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data";
+import "./carousel.css";
 
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [reverseOrder, setReverseOrder] = useState(false);
 
   useEffect(() => {
-    // Do something when the component mounts
+    const interval = setInterval(() => {
+      setSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
+      setReverseOrder((prevOrder) => !prevOrder);
+    }, 5000);
+
+    return () => clearInterval(interval); 
   }, []);
 
   const handleSlideChange = (index) => {
     setSlideIndex(index);
+    setReverseOrder((prevOrder) => !prevOrder);
   };
 
-  const getNextIndex = () => {
-    return (slideIndex + 1) % data.length;
-  };
-
-  const nextIndex = getNextIndex();
+  const nextIndex = (slideIndex + 1) % data.length;
 
   return (
-    <Flex
-      flexFlow={[null, "row nowrap", "row nowrap", "column nowrap"]}
-      placeContent="center"
-      placeItems="center"
-      textAlign="center"
-      h="100vh"
-      w="100vw"
-    >
-      <Box
-        width="100%"
-        height="100%"
-        minW="500px"
-        minH="500px"
-        borderRadius="10px"
-        overflow="hidden"
-      >
+    <div className="carousel-container">
+      <div className="cards-container">
         {data.map((card, index) => (
-          <Box
+          <div
+            className={`card ${slideIndex === index ? "active" : ""}`}
             key={index}
-            className={slideIndex === index ? "active" : ""}
-            style={{
-              display: slideIndex === index ? "flex" : "none",
-            }}
           >
-            <Image
-              src={card.secondaryImageUrl}
-              boxSize="30%"
-              
-           
-              onClick={() => handleSlideChange(index)}
-            />
-                 <Image
-              src={card.imageUrl}
-              boxSize="30%"
-              
-           
-              onClick={() => handleSlideChange(index)}
-            />
-            <Box ml="60px" p="10px" color="gray" fontSize="14px" fontWeight="bold">
-              {card.title}
-            </Box>
-            <Text ml="60px" p="10px" color="gray" fontSize="14px" fontWeight="normal">
-              {card.description}
-            </Text>
-          </Box>
+            {reverseOrder ? (
+              <>
+                <div className="text-container">
+                  <div className="title">{card.title}</div>
+                  <div className="description">{card.description}</div>
+                </div>
+                <img
+                  src={card.secondaryImageUrl}
+                  className="primary-image"
+                  onClick={() => handleSlideChange(index)}
+                />
+                <img
+                  src={card.imageUrl}
+                  className="secondary-image"
+                  onClick={() => handleSlideChange(index)}
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  src={card.secondaryImageUrl}
+                  className="primary-image"
+                  onClick={() => handleSlideChange(index)}
+                />
+                <img
+                  src={card.imageUrl}
+                  className="secondary-image"
+                  onClick={() => handleSlideChange(index)}
+                />
+                <div className="text-container">
+                  <div className="title">{card.title}</div>
+                  <div className="description">{card.description}</div>
+                </div>
+              </>
+            )}
+          </div>
         ))}
-      </Box>
-      <Flex flexFlow="column" ml="auto" mr="auto" w="20%" h="40px">
-        <Button
-          onClick={() => handleSlideChange(slideIndex === 0 ? data.length - 1 : slideIndex - 1)}
-          disabled={slideIndex === 0}
-          color="gray"
-          size="sm"
+      </div>
+
+      <div className="controls">
+        <button
+          className="button"
+          onClick={() =>
+            handleSlideChange(slideIndex === 0 ? data.length - 1 : slideIndex - 1)
+          }
         >
           Previous
-        </Button>
-        <Button
-          onClick={() => handleSlideChange(nextIndex)}
-          disabled={slideIndex === nextIndex}
-          color="gray"
-          size="sm"
-        >
+        </button>
+        <button className="button" onClick={() => handleSlideChange(nextIndex)}>
           Next
-        </Button>
-      </Flex>
-      <Box mt="2" w="100%" textAlign="center">
-        <Text color="gray" fontSize="14px" fontWeight="bold">
-          Preview:
-        </Text>
-        <Box mt="2" w="200px" h="200px" borderRadius="10px" overflow="hidden">
-          <Image src={data[nextIndex].imageUrl} boxSize="100%" />
-        </Box>
-        <Box mt="2" color="gray" fontSize="14px" fontWeight="bold">
-          {data[nextIndex].title}
-        </Box>
-      </Box>
-    </Flex>
+        </button>
+      </div>
+
+      <div className={`preview ${slideIndex === data.length - 1 ? "active" : ""}`}>
+        <div className="preview-text">Preview:</div>
+        <div className="preview-image-container">
+          <img src={data[nextIndex].imageUrl} className="preview-image" />
+        </div>
+        <div className="preview-title">{data[nextIndex].title}</div>
+      </div>
+    </div>
   );
 };
 

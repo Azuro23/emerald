@@ -35,13 +35,13 @@ const data = [
     secondaryImageUrl: image4,
   },
   {
-    title: "Card 1",
+    title: "Card 3",
     description: "Description for Card 1",
     imageUrl: image5,
     secondaryImageUrl: image6,
   },
   {
-    title: "Card 2",
+    title: "Card 4",
     description: "Description for Card 2",
     imageUrl: image7,
     secondaryImageUrl: image8,
