@@ -8,7 +8,7 @@ import Carousel from "./Carousel.jsx"
 const App = () => {
   return (
     <BrowserRouter>
-     {/* <NavBar /> */}
+  
      <Carousel />
      {/* <Devs /> */}
       <Routes>

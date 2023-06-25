@@ -36,22 +36,38 @@ margin:auto !important;
 }
 
 .navigation-menu {
-display: flex;
-color: #fff;
+  display: flex;
+  color: #fff;
   list-style: none;
   margin-right: -15em;
   padding: 0;
   opacity: 0;
   pointer-events: none;
- 
+  transition: opacity 500ms, fade-in 500ms;
 }
 
-.navigation-menu.show {
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* .navigation-menu.show {
   opacity: 1;
   pointer-events: auto;
   margin-right: -15em;
   transition: opacity 1500ms;
-}
+} */
 
 .navigation-item {
   padding: 10px;
@@ -65,18 +81,22 @@ color: #fff;
 }
 @media (max-width: 768px) {
   .navigation {
+    /* Styles for smaller screens */
     flex-direction: column;
     height: auto;
     padding: 10px;
   }
 
   .navigation-toggle {
-    margin-right:10px !important;
+    /* Styles for the toggle button */
+    margin-right: 10px !important;
     background-color: black !important;
-   
   }
 
   .navigation-menu {
+    /* Styles for the menu */
+    display: flex;
+    gap: 1em;
     position: absolute;
     top: 100%;
     left: 0;
@@ -87,11 +107,12 @@ color: #fff;
     background-color: #333;
     padding: 10px 0;
     margin-top: 10px;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
 
   .navigation-menu.show {
+    /* Styles for showing the menu */
     opacity: 1;
     pointer-events: auto;
     background-image: url(../assets/blackbg2.png);
@@ -99,12 +120,14 @@ color: #fff;
   }
 
   .navigation-item {
+    /* Styles for the menu items */
     display: block;
     margin-bottom: 10px;
     padding: 10px 0;
   }
 
   .logo {
+    /* Styles for the logo */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;

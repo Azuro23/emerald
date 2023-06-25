@@ -17,18 +17,20 @@ const NavBar = () => {
   return (
     <div className={`navigation ${isMounted ? 'fade-in' : ''}`}>
       <img className='logo' src={logo} alt='logo' />
-      <ul className={`navigation-menu ${isOpen ? 'show' : ''}`}>
+      {/* <ul className={`navigation-menu ${isOpen ? 'show' : ''}`}> */}
+      <ul className={`navigation-menu ${isMounted ? 'fade-in' : ''}`}>
+
         <li className='navigation-item'>Home</li>
         <li className='navigation-item'>About</li>
         <li className='navigation-item'>Services</li>
         <li className='navigation-item'>Contact</li>
       </ul>
-      <button
+      {/* <button
         className={`navigation-toggle ${isOpen ? 'hidden' : ''}`}
         onClick={toggleNavigation}
       >
         Menu
-      </button>
+      </button> */}
     </div>
   );
 };
