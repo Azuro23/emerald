@@ -6,6 +6,8 @@
   height: 100vh;
   width: 100vw;
   padding-bottom: 20px;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(5,7,15,1) 63%, rgba(0,0,0,0.9962578781512605) 75%);
+  
 }
 
 .card {
@@ -25,6 +27,12 @@
   opacity: 0;
   animation-duration: 3s;
   animation-fill-mode: both;
+  background-image: url(./assets/bgdark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card-container2{
+  background-image: url(./assets/bg1.png);
 }
 
 .fade-in {
@@ -82,6 +90,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  border-color: aqua;
 }
 
 .preview-image-container {
