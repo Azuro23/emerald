@@ -15,12 +15,42 @@
   overflow: hidden;
 }
 
-.card-container, .card-container2 {
+.card-container,
+.card-container2 {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   height: 100%;
+  opacity: 0;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.fade-out {
+  animation-name: fade-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .image1-div,

@@ -9,7 +9,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
-    }, 10000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
@@ -22,7 +22,12 @@ const Carousel = () => {
 
   return (
     <Box className="carousel-container">
-      <Box className={`card ${slideIndex % 2 === 0 ? "card-container" : "card-container2"}`}>
+      <Box
+        key={slideIndex}
+        className={`card ${
+          slideIndex % 2 === 0 ? "card-container fade-in" : "card-container2 fade-in"
+        }`}
+      >
         <Center>
           {slideIndex % 2 === 0 ? (
             <>
@@ -84,9 +89,7 @@ const Carousel = () => {
         </Button>
       </Center>
 
-      <Center
-        className={`preview ${slideIndex === data.length - 1 ? "active" : ""}`}
-      >
+      <Center className={`preview ${slideIndex === data.length - 1 ? "active" : ""}`}>
         <Text className="preview-text">Preview:</Text>
         <Box className="preview-image-container">
           <Image src={data[nextIndex].imageUrl} className="preview-image" />
