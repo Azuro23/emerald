@@ -5,14 +5,17 @@ import "./carousel.css";
 
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
-    }, 7000);
+      if (!isPaused) {
+        setSlideIndex((prevIndex) => (prevIndex + 1) % data.length);
+      }
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const handleSlideChange = (index) => {
     setSlideIndex(index);
@@ -21,12 +24,14 @@ const Carousel = () => {
   const nextIndex = (slideIndex + 1) % data.length;
 
   return (
-    <Box className="carousel-container">
+    <Box
+      className="carousel-container"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <Box
         key={slideIndex}
-        className={`card ${
-          slideIndex % 2 === 0 ? "card-container fade-in" : "card-container2 fade-in"
-        }`}
+        className={`card ${slideIndex % 2 === 0 ? "card-container" : "card-container2"} fade-in`}
       >
         <Center>
           {slideIndex % 2 === 0 ? (
@@ -89,7 +94,7 @@ const Carousel = () => {
         </Button>
       </Center>
 
-      <Center className={`preview ${slideIndex === data.length - 1 ? "active" : ""}`}>
+      <Center className="preview">
         <Text className="preview-text">Preview:</Text>
         <Box className="preview-image-container">
           <Image src={data[nextIndex].imageUrl} className="preview-image" />
