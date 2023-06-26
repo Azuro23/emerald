@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Center, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Center, useDisclosure,ScaleFade, Image, Text } from "@chakra-ui/react";
 import data from "./data";
 import "./carousel.css";
 import NavBar from "./EsComponents/NavBar";
@@ -8,6 +8,7 @@ import NavBar from "./EsComponents/NavBar";
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { isOpen, onToggle } = useDisclosure()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,10 +51,25 @@ const Carousel = () => {
   src='https://bit.ly/dan-abramov'
   alt='Dan Abramov'
 />
-                <Text className="description">{data[slideIndex].description}</Text>
+<Button onClick={onToggle}>Click Me</Button>
+      <ScaleFade initialScale={0.9} in={isOpen}>
+        <Box
+        width={'100%'}
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
+        >
+        {data[slideIndex].description}
+        </Box>
+      </ScaleFade>
               </Box>
               <Box className="image1-div">
                 <Image
+                mt={'.4em'}
+                width={'25em'}
                   src={data[slideIndex].secondaryImageUrl}
                   className="primary-image"
                   onClick={() => handleSlideChange(slideIndex)}
@@ -61,6 +77,8 @@ const Carousel = () => {
               </Box>
               <Box className="image2-div">
                 <Image
+                mt={'.4em'}
+                width={'25em'}
                
                   src={data[slideIndex].imageUrl}
                   className="secondary-image"
@@ -72,6 +90,9 @@ const Carousel = () => {
             <>
               <Box className="image1-div">
                 <Image
+                mt={'.4em'}
+               
+                width={'25em'}
                   src={data[slideIndex].secondaryImageUrl}
                   className="primary-image"
                   onClick={() => handleSlideChange(slideIndex)}
@@ -79,6 +100,8 @@ const Carousel = () => {
               </Box>
               <Box className="image2-div">
                 <Image
+                mt={'.4em'}
+                width={'25em'}
                   src={data[slideIndex].imageUrl}
                   className="secondary-image"
                   onClick={() => handleSlideChange(slideIndex)}
@@ -92,7 +115,20 @@ const Carousel = () => {
   src='https://bit.ly/dan-abramov'
   alt='Dan Abramov'
 />
-                <Text className="description">{data[slideIndex].description}</Text>
+<Button onClick={onToggle}>Click Me</Button>
+      <ScaleFade initialScale={0.9} in={isOpen}>
+        <Box
+        width={'100%'}
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
+        >
+        {data[slideIndex].description}
+        </Box>
+      </ScaleFade>
               </Box>
             </>
           )}
@@ -108,16 +144,19 @@ const Carousel = () => {
         >
           Prev
         </Button>
+        <Box className="preview-image-container">
+          <Image 
+          borderRadius={'50%'}
+          src={data[nextIndex].imageUrl} className="preview-image" />
+        </Box>
         <Button className="button-slide" onClick={() => handleSlideChange(nextIndex)}>
           Next
         </Button>
       </Center>
 
       <Center className="preview">
-        <Text className="preview-text">Preview:</Text>
-        <Box className="preview-image-container">
-          <Image src={data[nextIndex].imageUrl} className="preview-image" />
-        </Box>
+       
+     
         <Text className="preview-title">{data[nextIndex].title}</Text>
       </Center>
     </Box>

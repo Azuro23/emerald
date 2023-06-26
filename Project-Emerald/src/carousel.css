@@ -7,7 +7,7 @@
   height: 100vh;
   width: 100vw;
   padding-bottom: 20px;
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(5,7,15,1) 63%, rgba(0,0,0,0.9962578781512605) 75%);
+  background: fixed linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(5,7,15,1) 63%, rgba(0,0,0,0.9962578781512605) 75%);
   
 }
 
@@ -32,6 +32,37 @@ height: 50%;
 }
 .card-container2{
   background-image: url(./assets/bg1.png);
+}
+.card-container:hover {
+  animation: pulsate-border 3s infinite;
+}
+
+@keyframes pulsate-border {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.card-container2:hover {
+  animation: pulsate-border2 1s infinite;
+}
+
+@keyframes pulsate-border2 {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: red;
+  }
+  100% {
+    border-color: transparent;
+  }
 }
 
 .fade-in {
@@ -66,7 +97,8 @@ height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  gap: 1em;
+ 
 
 }
 
@@ -75,9 +107,10 @@ height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
   color: gray;
+
 }
 
 .controls {
@@ -89,7 +122,7 @@ height: 50%;
 
 .preview {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   margin-top: 20px;
   border:solid 5px;;

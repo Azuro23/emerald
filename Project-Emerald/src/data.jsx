@@ -23,26 +23,26 @@ import image8 from "./assets/8.png";
 
 const data = [
   {
-    title: "Card 1",
-    description: "HI Im card 1",
+    title: "Dev 1",
+    description: "Passionate developer with expertise in web development and a drive for innovation.",
     imageUrl: image1,
     secondaryImageUrl: image2,
   },
   {
-    title: "Card 2",
-    description: "HI Im card 2",
+    title: "Dev 2",
+    description:"Experienced developer specializing in creating scalable and efficient software solutions.",
     imageUrl: image3,
     secondaryImageUrl: image4,
   },
   {
-    title: "Card 3",
-    description: "HI Im card 3",
+    title: "Dev 3",
+    description: "Passionate developer dedicated to delivering high-quality code and innovative solutions.",
     imageUrl: image5,
     secondaryImageUrl: image6,
   },
   {
-    title: "Card 4",
-    description: "HI Im card 4",
+    title: "Dev 4",
+    description: "Detail-oriented developer with a passion for creating exceptional user experiences.",
     imageUrl: image7,
     secondaryImageUrl: image8,
   },
