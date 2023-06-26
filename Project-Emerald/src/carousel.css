@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@500&family=Source+Code+Pro&display=swap');
+
 .carousel-container {
   margin-top: 0px !important;
   display: flex;
@@ -101,6 +103,11 @@ height: 50%;
  
 
 }
+.primary-image, .secondary-image {
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 1em;
+}
 
 .text-container {
   flex: 1;
@@ -150,3 +157,13 @@ height: 50%;
   font-weight: bold;
   margin-top: 10px;
 }
+.text-css{
+  text-align: left;
+
+  font-family: 'Source Code Pro', monospace;
+
+}
+h2{
+  font-size: larger;
+}
+

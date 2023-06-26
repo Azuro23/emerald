@@ -1,3 +1,4 @@
+import "./Carousel.css";
 import image1 from "./assets/1.png";
 import image2 from "./assets/2.png";
 import image3 from "./assets/3.png";
@@ -23,26 +24,27 @@ import image8 from "./assets/8.png";
 
 const data = [
   {
-    title: "Dev 1",
-    description: "Passionate developer with expertise in web development and a drive for innovation.",
+    title:<h2 style={{  color: "rgba(129, 220, 220, 1)" }}>SpaceBook</h2>,
+    description: <h4 style={{  color: "rgba(129, 220, 220, 1)" }}> -"A social media platform connecting space enthusiasts worldwide, fostering collaboration, sharing discoveries, and igniting passion for space exploration."</h4>,
     imageUrl: image1,
     secondaryImageUrl: image2,
   },
   {
-    title: "Dev 2",
-    description:"Experienced developer specializing in creating scalable and efficient software solutions.",
+    title: <h2 style={{ color: "rgba(228, 127, 95, 1)" }}>Package Store</h2>,
+    description:<h4 style={{ color: "rgba(228, 127, 95, 1)" }}>-"Providing a wide selection of quality spirits, wines, and beers, delivering exceptional service to satisfy all your beverage desires.",</h4>,
     imageUrl: image3,
     secondaryImageUrl: image4,
   },
   {
-    title: "Dev 3",
-    description: "Passionate developer dedicated to delivering high-quality code and innovative solutions.",
+    title:  <h2 style={{ color: "rgba(110, 189, 177, 1)" }}> Eve's Jewelry</h2>,
+    description:<h4 style={{  color: "rgba(110, 189, 177, 1)" }}> -"Exquisite jewelry for every occasion, crafted with passion and elegance, bringing timeless beauty to your life."</h4>,
     imageUrl: image5,
     secondaryImageUrl: image6,
   },
   {
-    title: "Dev 4",
-    description: "Detail-oriented developer with a passion for creating exceptional user experiences.",
+    title:  <h2 style={{ color: "rgba(255, 157, 251, 1)" }}> BallyHoos Night Life</h2>,
+    description:<h4 style={{ color: "rgba(255, 157, 251, 1)" }}> 
+   - "An electrifying nightlife experience where music, dance, and celebration come alive, creating unforgettable moments that ignite the spirit of the night.",</h4>,
     imageUrl: image7,
     secondaryImageUrl: image8,
   },

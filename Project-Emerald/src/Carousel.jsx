@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Center, useDisclosure,ScaleFade, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Center,  Image, Text } from "@chakra-ui/react";
 import data from "./data";
 import "./carousel.css";
 import NavBar from "./EsComponents/NavBar";
@@ -8,7 +8,6 @@ import NavBar from "./EsComponents/NavBar";
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const { isOpen, onToggle } = useDisclosure()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,27 +43,10 @@ const Carousel = () => {
           {slideIndex % 2 === 0 ? (
             <>
               <Box className="text-container">
-                <Text className="title">{data[slideIndex].title}</Text>
-                <Image
-  borderRadius='full'
-  boxSize='150px'
-  src='https://bit.ly/dan-abramov'
-  alt='Dan Abramov'
-/>
-<Button onClick={onToggle}>Click Me</Button>
-      <ScaleFade initialScale={0.9} in={isOpen}>
-        <Box
-        width={'100%'}
-          p='40px'
-          color='white'
-          mt='4'
-          bg='teal.500'
-          rounded='md'
-          shadow='md'
-        >
-        {data[slideIndex].description}
-        </Box>
-      </ScaleFade>
+                <h2 className="text-css">{data[slideIndex].title}</h2>
+                <span className="text-css">{data[slideIndex].description}</span> 
+   
+
               </Box>
               <Box className="image1-div">
                 <Image
@@ -108,28 +90,11 @@ const Carousel = () => {
                 />
               </Box>
               <Box className="text-container">
-                <Text className="title">{data[slideIndex].title}</Text>
-                <Image
-  borderRadius='full'
-  boxSize='150px'
-  src='https://bit.ly/dan-abramov'
-  alt='Dan Abramov'
-/>
-<Button onClick={onToggle}>Click Me</Button>
-      <ScaleFade initialScale={0.9} in={isOpen}>
-        <Box
-        width={'100%'}
-          p='40px'
-          color='white'
-          mt='4'
-          bg='teal.500'
-          rounded='md'
-          shadow='md'
-        >
-        {data[slideIndex].description}
-        </Box>
-      </ScaleFade>
-              </Box>
+                <h2 className="text-css">{data[slideIndex].title}</h2>
+                <span className="text-css">{data[slideIndex].description}</span> 
+   
+
+              </Box> 
             </>
           )}
         </Center>
