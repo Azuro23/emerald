@@ -25,7 +25,7 @@ import image8 from "./assets/8.png";
 const data = [
   {
     title:<h2 style={{  color: "rgba(129, 220, 220, 1)" }}>SpaceBook</h2>,
-    description: <h4 style={{  color: "rgba(129, 220, 220, 1)" }}> -"A social media platform connecting space enthusiasts worldwide, fostering collaboration, sharing discoveries, and igniting passion for space exploration."</h4>,
+    description: <h4 style={{  color: "rgba(129, 220, 220, 1)" }}> -A social media platform connecting space enthusiasts worldwide, fostering collaboration, sharing discoveries, and igniting passion for space exploration."</h4>,
     imageUrl: image1,
     secondaryImageUrl: image2,
   },
