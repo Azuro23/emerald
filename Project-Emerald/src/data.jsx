@@ -31,20 +31,20 @@ const data = [
   },
   {
     title: <h2 style={{ color: "rgba(228, 127, 95, 1)" }}>Package Store</h2>,
-    description:<h4 style={{ color: "rgba(228, 127, 95, 1)" }}>-"Providing a wide selection of quality spirits, wines, and beers, delivering exceptional service to satisfy all your beverage desires.",</h4>,
+    description:<h4 style={{ color: "rgba(228, 127, 95, 1)" }}>-Providing a wide selection of quality spirits, wines, and beers, delivering exceptional service to satisfy all your beverage desires.,</h4>,
     imageUrl: image3,
     secondaryImageUrl: image4,
   },
   {
     title:  <h2 style={{ color: "rgba(110, 189, 177, 1)" }}> Eve's Jewelry</h2>,
-    description:<h4 style={{  color: "rgba(110, 189, 177, 1)" }}> -"Exquisite jewelry for every occasion, crafted with passion and elegance, bringing timeless beauty to your life."</h4>,
+    description:<h4 style={{  color: "rgba(110, 189, 177, 1)" }}> -Exquisite jewelry for every occasion, crafted with passion and elegance, bringing timeless beauty to your life.</h4>,
     imageUrl: image5,
     secondaryImageUrl: image6,
   },
   {
     title:  <h2 style={{ color: "rgba(255, 157, 251, 1)" }}> BallyHoos Night Life</h2>,
     description:<h4 style={{ color: "rgba(255, 157, 251, 1)" }}> 
-   - "An electrifying nightlife experience where music, dance, and celebration come alive, creating unforgettable moments that ignite the spirit of the night.",</h4>,
+   - An electrifying nightlife experience where music, dance, and celebration come alive, creating unforgettable moments that ignite the spirit of the night.,</h4>,
     imageUrl: image7,
     secondaryImageUrl: image8,
   },

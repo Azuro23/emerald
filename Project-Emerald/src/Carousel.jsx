@@ -35,7 +35,7 @@ const Carousel = () => {
       onMouseLeave={() => setIsPaused(false)}
     >
           <NavBar />
-          <Text mb={10}
+          <Text mb={5}
       color={"white"} > -The Azuro Agency is a network of software developers that specialize in web design and development. </Text>
       <Box
         key={slideIndex}
@@ -105,22 +105,43 @@ const Carousel = () => {
       </Box>
 
       <Center className="controls">
-        <Button color='black.50'
-          className="button-slide"
-          onClick={() =>
-            handleSlideChange(slideIndex === 0 ? data.length - 1 : slideIndex - 1)
-          }
-        >
-          Prev
-        </Button>
+      <Button
+  color={"whiteAlpha.900"}
+  bg={
+    "linear-gradient(90deg, rgba(13,13,13,1) 0%, rgba(12,12,14,1) 28%, rgba(34,34,94,1) 66%, rgba(11,11,11,0.9962578781512605) 84%')"
+  }
+  className="button-slide"
+  onClick={() =>
+    handleSlideChange(slideIndex === 0 ? data.length - 1 : slideIndex - 1)
+  }
+  _hover={{
+    color: "black",
+  }}
+>
+  Prev
+</Button>
+
         <Box className="preview-image-container">
           <Image 
           borderRadius={'50%'}
           src={data[nextIndex].imageUrl} className="preview-image" />
         </Box>
-        <Button className="button-slide" onClick={() => handleSlideChange(nextIndex)}>
-          Next
-        </Button>
+        <Button
+  color={"whiteAlpha.900"}
+  bg={
+    "linear-gradient(90deg, rgba(13,13,13,1) 0%, rgba(12,12,14,1) 28%, rgba(34,34,94,1) 66%, rgba(11,11,11,0.9962578781512605) 84%')"
+  }
+  className="button-slide"
+  onClick={() =>
+    handleSlideChange(slideIndex === 0 ? data.length - 1 : slideIndex - 1)
+  }
+  _hover={{
+    color: "black",
+  }}
+>
+Next
+</Button>
+
       </Center>
 
       <Center className="preview">
