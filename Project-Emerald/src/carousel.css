@@ -16,7 +16,7 @@
 .card {
   height: 20rem;
   width: 100vw;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: hidden;
 }
 
@@ -167,3 +167,8 @@ h2{
   font-size: larger;
 }
 
+.mission-text{
+
+color:aliceblue !;
+
+}

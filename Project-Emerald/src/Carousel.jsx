@@ -35,10 +35,13 @@ const Carousel = () => {
       onMouseLeave={() => setIsPaused(false)}
     >
           <NavBar />
+          <Text mb={10}
+      color={"white"} > -The Azuro Agency is a network of software developers that specialize in web design and development. </Text>
       <Box
         key={slideIndex}
         className={`card ${slideIndex % 2 === 0 ? "card-container" : "card-container2"} fade-in`}
       >
+  
         <Center>
           {slideIndex % 2 === 0 ? (
             <>
@@ -98,6 +101,7 @@ const Carousel = () => {
             </>
           )}
         </Center>
+
       </Box>
 
       <Center className="controls">
