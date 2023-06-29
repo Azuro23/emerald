@@ -14,7 +14,7 @@
 }
 
 .azura-text {
-  font-size: 10rem;
+  font-size: 14rem;
   font-weight: bold;
   opacity: 0;
   color: rgb(133, 133, 156);
@@ -44,7 +44,7 @@
 }
 
 .logoAnimation {
- width: 10em;
-  mix-blend-mode: lighten;
+ width: 8em;
+  mix-blend-mode:hard-light;
   border-radius: 50%;
 }

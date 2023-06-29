@@ -79,6 +79,7 @@ margin:auto !important;
 .logo{
   width:fit-content;
   height: 3em;
+  mix-blend-mode: lighten;
   border-radius: 50%;
   margin-left: -11em;
   box-shadow: rgb(243, 243, 246) 0px 50px 100px -20px, rgba(243, 235, 235, 0.3) 0px 30px 60px -30px, rgba(211, 115, 5, 0.35) 0px -2px 6px 0px inset;
