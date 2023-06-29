@@ -1,0 +1,35 @@
+.azura-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../assets/blueorbg.png);
+  background-size: cover;
+  width: 100%;
+}
+
+.azura-text {
+  font-size: 10rem;
+  font-weight: bold;
+  opacity: 0;
+  color: rgb(247, 247, 248);
+  transform: translateX(-1500px);
+  transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateX(-1500px);
+}
+
+
+.logo {
+  width: 1em;
+  mix-blend-mode:lighten;
+  border-radius: 50%;
+}

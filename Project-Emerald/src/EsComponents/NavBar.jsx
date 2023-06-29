@@ -20,7 +20,7 @@ const NavBar = () => {
   
      <Image
      boxShadow='dark-lg' p='1' rounded='md' bg='transparent'
-     Dark lg
+     dark="lg"
      className='logo'
   borderRadius='full'
   boxSize='5em'
