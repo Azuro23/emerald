@@ -117,6 +117,7 @@ height: 50%;
   justify-content: space-between;
   padding: 10px;
   color: gray;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.00);
 
 }
 

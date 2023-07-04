@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(../assets/blueorbg.png);
+  background-color: black;
+  background-image: url(../assets/azurebg2.png);
   background-size: cover;
   width: 100%;
 }

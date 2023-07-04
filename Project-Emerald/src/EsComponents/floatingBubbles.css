@@ -1,0 +1,29 @@
+.floating-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url(/src/assets/blueorbg.png);
+    background-repeat: no-repeat;
+  }
+  
+  .bubble {
+    position: absolute;
+    border-radius: 40%;
+  
+    pointer-events: none;
+    animation: floatBubble linear infinite;
+    background-image: url(src/assets/Logo.jpeg)
+  }
+  
+  @keyframes floatBubble {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+  }
+  

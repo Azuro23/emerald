@@ -1,0 +1,32 @@
+.floating-matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    background-image: url
+  }
+  
+  .matrix-char {
+    position: absolute;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: rgba(0, 255, 0, 0.8); /* Adjust color and opacity as needed */
+    user-select: none;
+    pointer-events: none;
+    animation-name: floatMatrix;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes floatMatrix {
+    0% {
+      transform: translateY(20px) rotateX(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotateX(360deg);
+    }
+  }
+  

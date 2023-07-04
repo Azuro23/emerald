@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./azuraAnimation.css";
 import logo from "../assets/Logo.jpeg";
 import Carousel from "../Carousel.jsx";
+import FloatingBubbles from "./FloatingBubbles.jsx";
+import FloatingMatrix from "./FloatingMatrix.jsx";
 
 const AzuraAnimation = () => {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -11,7 +13,7 @@ const AzuraAnimation = () => {
     const animationTimeout = setTimeout(() => {
       setIsAnimating(false);
       setShowCarousel(true); // Set showCarousel state after animation completes
-    }, 7000);
+    }, 5000);
 
     return () => {
       clearTimeout(animationTimeout);
@@ -22,6 +24,9 @@ const AzuraAnimation = () => {
     <>
       {isAnimating && (
         <div className={`azura-container ${isAnimating ? "fade-in" : "fade-out"}`}>
+       
+          <FloatingMatrix />
+          {/* <FloatingBubbles/> */}
           <img src={logo} alt="azuralogo" className="logoAnimation" />
           <div className="azura-text-container">
             
